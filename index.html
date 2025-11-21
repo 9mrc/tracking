@@ -26,7 +26,7 @@
             margin-bottom: 5px;
         }
         #logo-section h1 {
-            font-size: 24px;
+            font-size: 26px;
             color: #2e2524;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -47,7 +47,7 @@
         .logo-graphic .black { background-color: #333; }
         .logo-graphic .white { background-color: #fff; }
     
-        /* 2. ส่วนหัวข้อ */
+
         .title-section {
             text-align: center;
             margin-bottom: 25px;
@@ -63,12 +63,12 @@
 
         .title-section p {
             font-style: italic;
-            font-size: 16px; 
+            font-size: 14px; 
             margin: 5px 0 0;
             color: #333;
         }
         
-        /* 3. Wrapper Container สำหรับควบคุมความกว้าง */
+
         #wrapper-container {
             width: 100%;
             max-width: 350px; 
@@ -77,7 +77,7 @@
             align-items: center; 
         }
 
-        /* 4. กล่อง Input (.input-card) */
+
         .input-card { 
             background-color: #ffffff;
             border-radius: 15px; 
@@ -124,7 +124,7 @@
             background-color: #d1dfeb;
         }
 
-        /* 5. กล่องแสดงผลลัพธ์ (#result-container) */
+
         #result-container {
             width: 100%; 
             text-align: left; 
@@ -149,14 +149,14 @@
             font-weight: bold;
         }
 
-        /* 🌟 แก้ไข Status: ให้เล็กและสีเทา */
+
         #status-row {
             font-size: 13px; 
             color: #777; /* สีเทา */
             margin-top: 15px;
         }
 
-        /* 🌟 สไตล์สำหรับกล่อง Loading ตามที่กำหนด */
+
         #loading-box {
             background-color: #dce6ef; /* สีที่กำหนด: #dce6ef */
             color: #4a5c71; /* สีโทนเดียวกันแต่เข้มขึ้น */
@@ -227,7 +227,6 @@
     </div>
 
         <script>
-        // 🌟 แทนที่ URL นี้ด้วย Web app URL ที่ได้จาก Google Apps Script ของคุณ
         const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz46wV2NY0rXNnfblOkDPHEdmqXuDxMkWkUhB59iLtDkHFaqYvPATvohM5HVqaE8-vW/exec'; 
 
         document.getElementById('go-button').addEventListener('click', function() {
@@ -259,7 +258,6 @@
             loadingBox.style.fontWeight = 'bold';
             
             // 3. เริ่มการเรียก API
-            // สร้าง URL สำหรับค้นหา (เช่น YOUR_URL?account=@testuser)
             const fetchUrl = `${API_ENDPOINT}?account=${encodeURIComponent(account)}`;
 
             fetch(fetchUrl)
@@ -283,18 +281,15 @@
                         statusRow.querySelector('#status-text').textContent = data.status;
 
                     } else {
-                        // B. ไม่พบข้อมูล (ซ่อนหัวข้อทั้งหมด ยกเว้นกล่อง Loading)
                         detailsSection.classList.add('hide-on-loading');
                         statusRow.classList.add('hide-on-loading');
 
-                        // อัปเดตกล่อง Loading ด้วยข้อความไม่พบข้อมูล
                         loadingBox.textContent = 'ไม่พบข้อมูล โปรดลองอีกครั้ง'; 
                         loadingBox.style.color = '#2e2524'; 
                         loadingBox.style.backgroundColor = '#ffffff'; 
                     }
                 })
                 .catch(error => {
-                    // 5. จัดการข้อผิดพลาด (เช่น เน็ตหลุด)
                     detailsSection.classList.add('hide-on-loading');
                     statusRow.classList.add('hide-on-loading');
                     loadingBox.textContent = 'เกิดข้อผิดพลาดในการเชื่อมต่อ';
