@@ -203,20 +203,20 @@
             <div class="white"></div><div class="black"></div><div class="white"></div>
         </div>
     <div class="title-section">
-        <h2>✶ Tracking Number !</h2>
+        <h2>Tracking Number ─ ★</h2>
         <p>any questions, contact @_9mrc</p>
     </div>
 
     <div id="wrapper-container">
         <div class="input-card">
-            <label for="account-input">@account</label>
+            <label for="account-input">☼ 🚏 : @account</label>
             <input type="text" id="account-input" placeholder="enter your account..." autocomplete="off"/>
             <button id="go-button">GO!</button>
         </div>
 
         <div id="result-container">
             <div id="details-section">
-                <div class="detail-row"><strong class="label">Name :</strong> <span id="name-display"></span></div>
+                <div class="detail-row"><strong class="label">⊹ give to :</strong> <span id="name-display"></span></div>
                 <div class="detail-row"><strong class="label">Tracking Number :</strong></div>
             </div>
 
@@ -233,7 +233,7 @@
     </div>
 
         <script>
-        const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz46wV2NY0rXNnfblOkDPHEdmqXuDxMkWkUhB59iLtDkHFaqYvPATvohM5HVqaE8-vW/exec'; 
+        const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZRwligVKxOUkCST850yf11b_TJGfu2MV9YpNg-vMmXmNuHP9Zayq4g_zAT3LPr2VKqA/exec'; 
 
         document.getElementById('go-button').addEventListener('click', function() {
             const accountInput = document.getElementById('account-input');
@@ -270,7 +270,7 @@
                         detailsSection.classList.remove('hide-on-loading');
                         statusRow.classList.remove('hide-on-loading');
                         
-                        nameDisplay.textContent = data.name;
+                        nameDisplay.textContent = data.giveTo;
                         
                         loadingBox.textContent = data.trackingNumber; 
                         loadingBox.style.color = '#2e2524';
